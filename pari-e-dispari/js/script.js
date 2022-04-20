@@ -79,3 +79,27 @@ function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
     
 }
+
+
+// metodo function per indicare il vincitore
+function winner(userNum, cpuNum) {
+    
+  // variabile indica la somma del numero dell'utente e del numero della cpu
+  const sum = userNum + cpuNum;
+  let result;
+
+  console.log(sum);
+
+  // se la somma non è divisibile per 2, è dispari
+  if(sum % 2){
+    result = 'dispari';
+  } 
+
+  // altrimenti è pari
+  else {
+    result = 'pari';
+  }
+  
+  return result;
+}   
+

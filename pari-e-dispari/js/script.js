@@ -67,3 +67,15 @@ while(result) {
 }
 
 console.log(userNum);
+
+
+//variabile in cui il computer sceglierà un numero a random tra 1 e 5
+const cpuNum = randomNum(1, 5); 
+
+console.log(cpuNum);
+
+function randomNum(min, max) {
+
+  return Math.floor(Math.random() * (max - min + 1) + min);
+    
+}

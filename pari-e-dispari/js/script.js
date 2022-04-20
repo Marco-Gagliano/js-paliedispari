@@ -36,3 +36,34 @@ while(isEvenOdd){
 
 console.log('Hai scelto: ', evenOdd)
 
+
+const resultGame = document.getElementById('result-game');
+
+// variabile che indica il numero che scriverà l'utente
+let userNum;
+
+// Variabile con metodo boolean per la scelta del pari e dispari
+let result = true;
+
+
+while(result) {
+
+  userNum = parseInt(prompt('Inserisci un numero da 1 a 5'));
+
+  // finché la variabile "userNum" non risulta che hai inserito un numero da 1 a 5, richiedo il prompt
+  if(isNaN(userNum)){
+    alert('Inserisci un numero');} 
+
+  // finchè scrivo un numero maggiore di 5, richiedo il prompt
+  else if(userNum > 5) {
+    alert('Inserisci un numero minore di 5');} 
+
+  // finchè scrivo un numero minore di 5, richiedo il prompt
+  else if(userNum < 1){
+    alert('Inserisci un numero maggiore di 1');}
+    
+  else {
+    result = false;}
+}
+
+console.log(userNum);

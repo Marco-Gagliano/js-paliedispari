@@ -13,3 +13,13 @@ Bonus: L’inserimento avviene tramite un campo input
 // 
 // 
 // 
+
+let word = prompt('inserisci una parola e scopri se è palindroma o no');
+let invertWord = invertWord(word);
+
+if(word == invertWord){
+  console.log('la parola è palindroma');
+} 
+else {
+    console.log('la parola non è palindroma');
+}

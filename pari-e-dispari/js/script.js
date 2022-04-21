@@ -34,16 +34,17 @@ while(isEvenOdd){
   }
 }
 
-console.log('Hai scelto: ', evenOdd)
+const chooseEvenOdd = document.getElementById('choose-odd-even')
+chooseEvenOdd.innerHTML = `Hai scelto: ${evenOdd}`
 
 
-const resultGame = document.getElementById('result-game');
 
 // variabile che indica il numero che scriverà l'utente
 let userNum;
 
 // Variabile con metodo boolean per la scelta del pari e dispari
 let result = true;
+
 
 
 while(result) {
@@ -66,13 +67,16 @@ while(result) {
     result = false;}
 }
 
-console.log(userNum);
+const userChoice = document.getElementById ('user-choice')
+userChoice.innerHTML = `${userNum}`
 
 
 //variabile in cui il computer sceglierà un numero a random tra 1 e 5
 const cpuNum = randomNum(1, 5); 
 
-console.log(cpuNum);
+const cpuChoice = document.getElementById ('cpu-choice')
+cpuChoice.innerHTML = `${cpuNum}`
+
 
 function randomNum(min, max) {
 
@@ -86,20 +90,41 @@ function winner(userNum, cpuNum) {
     
   // variabile indica la somma del numero dell'utente e del numero della cpu
   const sum = userNum + cpuNum;
+  
   let result;
 
-  console.log(sum);
-
+  
   // se la somma non è divisibile per 2, è dispari
   if(sum % 2){
     result = 'dispari';
   } 
-
+  
   // altrimenti è pari
   else {
     result = 'pari';
   }
   
+  const sumNumbers = document.getElementById ('sum-number')
+  sumNumbers.innerHTML = `${sum}`
+
   return result;
 }   
+
+
+
+const resultGame = document.getElementById('result-game');
+
+// se tra la somma dell'utente
+if(winner(userNum, cpuNum) === evenOdd) {
+  
+  resultGame.innerHTML = 'Vince chi ha scelto Pari';
+} 
+
+else {
+  
+  resultGame.innerHTML = 'Vince chi ha scelto dispari';
+  
+}
+console.log(winner(userNum, cpuNum));
+
 
